@@ -35,7 +35,17 @@ RemoteApp/
 | 4 | Правило брандмауэра для TCP 3389 |
 | 5 | Политики GPO для RemoteApp, шаблон `.rdp`, лимиты сеансов |
 
-### 2. Скопировать файлы на сервер
+### 2. Скачать Obsidian Portable
+
+Бинарники не включены в репозиторий (слишком большой размер). Скачайте архив **ObsidianPortable** с [portableapps.com/apps/office/obsidian-portable](https://portableapps.com/apps/office/obsidian-portable) (версия **1.10.6**) и распакуйте в папку `ObsidianPortable/` так, чтобы путь к лаунчеру был:
+
+```
+ObsidianPortable/ObsidianPortable.exe
+```
+
+Затем скопируйте из репозитория файл `ObsidianPortable/App/AppInfo/Launcher/ObsidianPortable.ini` поверх стандартного — он уже содержит правки для RDS (`SinglePortableAppInstance=false`, `--user-data-dir` per session).
+
+### 3. Скопировать файлы на сервер
 
 Рекомендуемое расположение:
 
